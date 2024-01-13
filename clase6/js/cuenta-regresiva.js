@@ -10,7 +10,7 @@ let intervalo = '';
 //declaramos funcion/es de control
 function cuentaRegresiva()
 {
-    const final = new Date(2024, 03, 17); //primero viene el año, luego el mes y por ultimo el dia
+    const final = new Date(2024, 3, 17); //primero viene el año, luego el mes y por ultimo el dia
     const actual = new Date();
 
     //calculamos la diferencia de los eventos 
@@ -45,6 +45,24 @@ function cuentaRegresiva()
     segundos = segundos%60;
     console.log( 'segundos: ', segundos);
 
+
+    /*
+    detener cuando llegue a 0
+    cambiar el texto de h1
+     */
+
+    if( 
+            dias <= 0 &&
+            horas <= 0 &&
+            minutos <= 0 &&
+            segundos <= 0
+      ){
+            h1.innerText = 'Cumpleaños finalizado';
+            clearInterval( intervalo );
+    }
+
+
+
     /*agregamos cero (0) inicial para dos digitos */
 
     if( dias < 10 ){
@@ -75,3 +93,6 @@ function cuentaRegresiva()
 cuentaRegresiva();
 //actualizamos el llamado a la funcion
 intervalo = setInterval( cuentaRegresiva, 1000 );
+
+
+

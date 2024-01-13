@@ -45,6 +45,23 @@ function cuentaRegresiva()
     segundos = segundos%60;
     console.log( 'segundos: ', segundos);
 
+    /*agregamos cero (0) inicial para dos digitos */
+
+    if( dias < 10 ){
+        dias = '0' + dias;
+    }
+
+    if( horas < 10 ){
+        horas = '0' + horas;
+    }    
+
+    if( minutos < 10 ){
+        minutos = '0' + minutos;
+    }
+
+    if( segundos < 10 ){
+        segundos = '0' + segundos;
+    }  
 
     /*imprimimos en los span */
         txtDias.innerText = dias;
